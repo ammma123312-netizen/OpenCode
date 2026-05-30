@@ -1,7 +1,7 @@
 import React from 'react';
 import Message from './Message';
 
-interface Message {
+interface MessageData {
   id: string;
   content: string;
   sender: 'user' | 'ai';
@@ -9,7 +9,7 @@ interface Message {
 }
 
 interface MessageListProps {
-  messages: Message[];
+  messages: MessageData[];
   isLoading: boolean;
 }
 

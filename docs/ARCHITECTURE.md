@@ -6,19 +6,44 @@
 
 ```
 OpenCode/
-├── src/
-│   ├── pages/          # صفحات Next.js
-│   ├── components/     # مكونات React
-│   ├── styles/         # ملفات CSS/Tailwind
-│   ├── hooks/          # React Hooks
-│   └── utils/          # دوال مساعدة
-├── server/
-│   ├── routes/         # المسارات API
-│   ├── middleware/     # Middleware
-│   ├── config/         # ملفات الإعدادات
-│   └── index.ts        # نقطة دخول الخادم
-├── docs/               # التوثيق
-└── public/             # الملفات الثابتة
+├── src/                          # الكود الأمامي
+│   ├── pages/                    # صفحات Next.js
+│   │   ├── _app.tsx             # تطبيق رئيسي
+│   │   ├── _document.tsx         # المستند
+│   │   ├── index.tsx             # الصفحة الرئيسية
+│   │   └── api/
+│   │       └── chat.ts           # نقطة نهاية الدردشة
+│   ├── components/               # مكونات React
+│   │   ├── ChatInterface.tsx
+│   │   ├── MessageList.tsx
+│   │   ├── Message.tsx
+│   │   ├── InputBar.tsx
+│   │   └── Header.tsx
+│   ├── hooks/                    # Hooks مخصصة
+│   │   └── useSocket.ts
+│   ├── styles/                   # ملفات CSS
+│   │   └── globals.css
+│   └── utils/                    # دوال مساعدة
+│       └── api.ts
+├── server/                       # الخادم الخلفي
+│   ├── index.ts                  # نقطة الدخول الرئيسية
+│   ├── routes/                   # المسارات
+│   │   ├── chat.ts
+│   │   └── health.ts
+│   ├── middleware/               # Middleware
+│   │   ├── errorHandler.ts
+│   │   └── logger.ts
+│   └── config/                   # الإعدادات
+│       └── ai.ts                 # خدمة MiniMax AI
+├── docs/                         # التوثيق
+│   ├── ARCHITECTURE.md
+│   └── SETUP.md
+├── package.json
+├── tsconfig.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+└── .env.example
 ```
 
 ## الجانب الأمامي (Frontend)
